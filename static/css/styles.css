@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Fondo */
+    --background-color: #f1f3f4;
+    --top-color: #ffffff;
+    /* Cuadros de texto */
+    --box-border-color: #e0e0e0;
+    /* Botones */
+    --main-button-color: #4285f4;
+    --main-button-hover-color: #4285f480;
+    --secondary-button-color: #f0f0f0;
+    --secondary-button-hover-color: #f0f0f073;
+    --add-button-color: #34A853;
+    --add-button-hover-color: #34A85380;
+    --disabled-button-color: #E9ECEF;
+    --disabled-button-hover-color: #E9ECEF80;
+    /* Textos */
+    --main-text-color: #253340;
+    --secondary-text-color: #A5B0BC;
+    --main-font: 'Poppins', sans-serif;
+    /* Transiciones */
+    --quick-transition: 0.3s ease;
+}
+
+/* ==========================================================================
+   Reseteo de estilos y estilos globales
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+}
+
+hr {
+    border: var(--background-color) 1px solid;
+    margin: 0.5px 0;
+}
+
+/* ==========================================================================
+   Clases para el contenedor y el formulario de inicio de sesión
+   ========================================================================== */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.login-container > * {
+    background-color: var(--top-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    color: var(--main-text-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--box-border-color);
+    border-radius: 4px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    color: var(--main-text-color);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--main-button-color);
+    box-shadow: 0 0 5px var(--main-button-hover-color);
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--main-button-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--quick-transition);
+}
+
+.login-button:hover {
+    background-color: var(--main-button-hover-color);
+}
+
+/* ==========================================================================
+   Clases para la vista cotizador
+   ========================================================================== */
+/* Estilos para el header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: var(--top-color);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.header-title p {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--main-text-color);
+}
+
+.user-info {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.user-info p {
+    font-size: 16px;
+    color: var(--main-text-color);
+}
+
+.exit-button {
+    padding: 8px;
+    background-color: var(--top-color);
+    color: var(--main-button-color);
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--quick-transition);
+}
+
+.exit-button:hover {
+    color: var(--main-button-hover-color);
+}
+
+/* Estilos para los filtros */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--top-color);
+    border-radius: 10px;
+    padding: 16px;
+    gap: 16px;
+}
+
+.filter-group select {
+    min-width: 120px;
+    max-width: 100%;
+    padding: 8px;
+    border: 1px solid var(--box-border-color);
+    border-radius: 4px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    width: auto;
+    color: var(--main-text-color);
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--main-button-color);
+    box-shadow: 0 0 5px var(--main-button-hover-color);
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--main-button-color);
+    box-shadow: 0 0 5px var(--main-button-hover-color);
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.selection-row,
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.selection-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 120px;
+    flex: 0 1 auto;
+}
+
+.selection-filter label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--main-text-color);
+}
+
+.input-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 120px;
+    flex: 0 1 auto;
+}
+
+.input-filter label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--main-text-color);
+}
+
+.input-filter input {
+    padding: 8px;
+    border: 1px solid var(--box-border-color);
+    border-radius: 4px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    width: auto;
+    min-width: 120px;
+    color: var(--secondary-text-color);
+}
+
+.input-filter input:focus {
+    outline: none;
+    border-color: var(--main-button-color);
+    box-shadow: 0 0 5px var(--main-button-hover-color);
+}
+
+.input-filter input:disabled {
+    background-color: #f5f5f5;
+    color: #999999;
+    cursor: not-allowed;
+    border-color: #d3d3d3;
+}
+
+.filter-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.filter-actions button {
+    width: auto;
+    padding: 6px 12px;
+    flex: none;
+}
+
+.filter-actions .add-button,
+.filter-actions .secondary-button {
+    width: auto;
+}
+.add-button {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--add-button-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--quick-transition);
+    width: 50%;
+}
+
+.add-button:hover {
+    background-color: var(--add-button-hover-color);
+}
+
+.secondary-button {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--secondary-button-color);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--quick-transition);
+    width: 50%;
+}
+
+.secondary-button:hover {
+    background-color: var(--secondary-button-hover-color);
+}
+
+.filter-group button:disabled {
+    background-color: var(--disabled-button-color);
+    cursor: not-allowed;
+}
+
+/* Estilos para el main */
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5%;
+    background-color: var(--top-color);
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+/* Estilos para la tabla de productos */
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.products-table thead {
+    background-color: #f0f0f0;
+}
+
+.products-table th {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--main-text-color);
+    border-bottom: 2px solid var(--box-border-color);
+    border-right: 1px solid var(--box-border-color);
+}
+
+.products-table th:last-child {
+    border-right: none;
+}
+
+.products-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--box-border-color);
+    border-right: 1px solid var(--box-border-color);
+    color: var(--main-text-color);
+}
+
+/* make certain columns narrower */
+
+.products-table td:last-child {
+    border-right: none;
+}
+
+.products-table tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: var(--quick-transition);
+}
+
+.products-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Estilos para el pie de tabla */
+.products-table tfoot {
+    background-color: #f9f9f9;
+}
+
+.summary-row {
+    border-top: 1px solid var(--box-border-color);
+}
+
+.summary-row td {
+    padding: 12px;
+    border-bottom: 1px solid var(--box-border-color);
+}
+
+.summary-label {
+    text-align: right;
+    font-weight: 500;
+    color: var(--main-text-color);
+}
+
+.summary-value {
+    text-align: right;
+    font-weight: 500;
+    color: var(--main-text-color);
+}
+
+.total-row {
+    border-top: 2px solid var(--main-button-color);
+}
+
+.total-row td {
+    padding: 14px 12px;
+    border-bottom: 2px solid var(--main-button-color);
+    font-weight: 700;
+}
+
+.total-label {
+    text-align: right;
+    color: var(--main-button-color);
+    font-size: 15px;
+}
+
+.total-value {
+    text-align: right;
+    color: var(--main-button-color);
+    font-size: 15px;
+}

@@ -1,0 +1,243 @@
+/* ==========================================================================
+   Media Queries - Estilos Responsivos
+   ========================================================================== */
+
+/* Tablets y pantallas medianas (hasta 1024px) */
+@media (max-width: 1024px) {
+    .header {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .user-info {
+        gap: 12px;
+        flex-direction: row;
+    }
+
+    .filter-group {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .selection-row,
+    .input-row {
+        gap: 12px;
+    }
+
+    .selection-filter,
+    .input-filter {
+        min-width: 100px;
+        flex: 0 1 auto;
+    }
+
+    .products-table {
+        font-size: 13px;
+    }
+
+    .products-table th,
+    .products-table td {
+        padding: 8px;
+    }
+
+    .add-button,
+    .secondary-button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Móviles (hasta 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    .user-info {
+        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .exit-button {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .filter-group {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .filters {
+        gap: 10px;
+    }
+
+    .selection-row,
+    .input-row {
+        gap: 10px;
+    }
+
+    .selection-filter,
+    .input-filter {
+        min-width: 90px;
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .selection-filter label,
+    .input-filter label {
+        font-size: 12px;
+    }
+
+    .filter-group select,
+    .input-filter input {
+        font-size: 13px;
+        padding: 6px;
+        min-width: 80px;
+    }
+
+    .filter-actions {
+        gap: 8px;
+        margin-top: 6px;
+    }
+
+    .add-button,
+    .secondary-button {
+        padding: 6px 10px;
+        font-size: 12px;
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .main {
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .products-table {
+        font-size: 12px;
+    }
+
+    .products-table th {
+        padding: 6px 4px;
+    }
+
+    .products-table td {
+        padding: 6px 4px;
+    }
+
+    .products-table th,
+    .products-table td {
+        font-size: 11px;
+    }
+
+    .summary-row td,
+    .total-row td {
+        padding: 8px 4px;
+    }
+
+    .total-label,
+    .total-value,
+    .summary-label,
+    .summary-value {
+        font-size: 12px;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .header h3 {
+        font-size: 16px;
+    }
+
+    .user-info {
+        gap: 8px;
+        font-size: 12px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .exit-button {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .filter-group {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .selection-row,
+    .input-row {
+        gap: 8px;
+    }
+
+    .selection-filter,
+    .input-filter {
+        /* allow inputs to size naturally instead of expanding full width */
+        min-width: 120px;
+        flex: 1 1 auto;
+    }
+
+    .selection-filter label,
+    .input-filter label {
+        font-size: 11px;
+    }
+
+    .filter-group select,
+    .input-filter input {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .filter-actions {
+        gap: 6px;
+        flex-direction: column;
+    }
+
+    .add-button,
+    .secondary-button {
+        padding: 8px 10px;
+        font-size: 11px;
+        width: 100%;
+    }
+
+    .main {
+        padding: 8px;
+    }
+
+    .products-table {
+        font-size: 10px;
+    }
+
+    .products-table th,
+    .products-table td {
+        padding: 4px 2px;
+        font-size: 10px;
+    }
+
+    .summary-row td,
+    .total-row td {
+        padding: 6px 2px;
+    }
+
+    .total-label,
+    .total-value,
+    .summary-label,
+    .summary-value {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,144 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+<section class="header">
+    <div class="header-title">
+        <p> Precotizador de fletes </p>
+    </div>
+
+    <div class="user-info">
+        <p> Hola, usuario </p>
+        <button class="exit-button"> Cerrar sesión </button>
+    </div>
+</section>
+
+<hr />
+
+<section class="filter-group">
+    <div class="filters">
+        <div class="selection-row">
+            <div class="selection-filter">
+                <label for="origen"> Origen </label>
+                <select name="origen" id="origen">
+                    <option value="">Selecciona un origen</option>
+                    <option value="origen1">Rinnai México (Industrias MASS S.A. de C.V.)</option>
+                </select>
+            </div>
+
+            <div class="selection-filter">
+                <label for="destino"> Destino </label>
+                <select name="destino" id="destino">
+                    <option value="">Selecciona un destino</option>
+                    {% for estado in estados %}
+                    <option value="{{ estado.NombreEstado }}">{{ estado.NombreEstado }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="selection-filter">
+                <label for="marca"> Marca </label>
+                <select name="marca" id="marca">
+                    <option value="">Selecciona una marca</option>
+                    {% for marca in marcas %}
+                    <option value="{{ marca.IdMarca }}">{{ marca.NombreMarca }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="selection-filter">
+                <label for="modelo"> Modelo </label>
+                <select name="modelo" id="modelo">
+                    <option value="">Selecciona un modelo</option>
+                </select>
+            </div>
+
+            <div class="selection-filter">
+                <label for="descripcion"> Descripción </label>
+                <select name="descripcion" id="descripcion">
+                    <option value="">Selecciona una descripción</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-filter">
+                <label for="cantidad"> Cantidad </label>
+                <input type="number" name="cantidad" id="cantidad" min="1" placeholder="Ingresa la cantidad">
+            </div>
+
+            <div class="input-filter">
+                <label for="precio"> Precio unitario (USD) </label>
+                <input type="number" name="precio" id="precio" min="0" step="0.01" placeholder="Precio" disabled>
+            </div>
+
+            <div class="input-filter">
+                <label> Largo (cm) </label>
+                <input type="number" name="largo" id="largo" min="0" step="0.01" placeholder="Largo" disabled>
+            </div>
+
+            <div class="input-filter">
+                <label> Ancho (cm) </label>
+                <input type="number" name="ancho" id="ancho" min="0" step="0.01" placeholder="Ancho" disabled>
+            </div>
+
+            <div class="input-filter">
+                <label> Alto (cm) </label>
+                <input type="number" name="alto" id="alto" min="0" step="0.01" placeholder="Alto" disabled>
+            </div>
+
+            <div class="input-filter">
+                <label> Peso (kg) </label>
+                <input type="number" name="peso" id="peso" min="0" step="0.01" placeholder="Peso" disabled>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-actions">
+        <button class="add-button"> Agregar producto </button>
+        <button class="secondary-button"> Limpiar filtros </button>
+        <button class="secondary-button"> Exportar a Excel </button>
+    </div>
+</section>
+
+<hr style="margin: 7px;" />
+
+<section class="main">
+    <table class="products-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Descripción</th>
+                <th>Largo (cm)</th>
+                <th>Ancho (cm)</th>
+                <th>Alto (cm)</th>
+                <th>Peso (kg)</th>
+                <th>Cantidad</th>
+                <th>Precio unitario</th>
+                <th>Costo del seguro</th>
+                <th>Subtotal por producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los productos se agregarán aquí dinámicamente -->
+        </tbody>
+        <tfoot>
+            <tr class="summary-row">
+                <td colspan="11" class="summary-label">Subtotal:</td>
+                <td class="summary-value">$0.00</td>
+            </tr>
+            <tr class="summary-row">
+                <td colspan="11" class="summary-label">IVA (19%):</td>
+                <td class="summary-value">$0.00</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="11" class="total-label">Total:</td>
+                <td class="total-value">$0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
