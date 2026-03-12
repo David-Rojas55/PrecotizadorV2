@@ -240,7 +240,7 @@ hr {
     font-size: 14px;
     width: auto;
     min-width: 120px;
-    color: var(--secondary-text-color);
+    color: var(--main-text-color);
 }
 
 .input-filter input:focus {
